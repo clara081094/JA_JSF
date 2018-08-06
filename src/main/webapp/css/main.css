@@ -1,0 +1,31 @@
+body {
+    background-color: gray;
+}
+
+#contenedor {
+    border-style:groove;
+    background-color: white;
+    width: 900px;
+    margin: 0em auto;
+}
+
+#cabecera {
+    border-bottom: solid
+}
+
+#menu {
+    float: left;
+    width: 200px;
+}
+
+#contenido {
+    float: left;
+    width: 900px;
+}
+
+#pie {
+     border-top: solid;
+    clear: both;
+}
+
+

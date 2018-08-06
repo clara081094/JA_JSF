@@ -1,0 +1,54 @@
+/* para menús */
+#menu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+#menu li a {
+    height: 24px;
+    text-decoration: none;
+}
+
+#menu li a.imp:active, #menu li a.imp:link, #menu li a.imp:visited {
+    color: #FFFFFF;
+    display: block;
+    background-color:#003355;
+    padding: 6px;
+    font-weight:bold;
+}
+
+#menu li a.par:active, #menu li a.par:link, #menu li a.par:visited {
+    color: #FFFFFF;
+    display: block;
+    background-color: #999999;
+    padding: 6px;
+    font-weight:bold;
+}
+
+#menu li a.imp:hover, #menu li a.par:hover {
+    color: #FFFFFF;
+    background-color:#0066CC;
+    padding: 6px;
+    font-weight:bold;
+}
+
+/* normales */
+a.normal:active, a.normal:link, a.normal:visited {
+    color: #444;
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+a.normal:hover 	{
+    color: #900;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+/* para imagenes como links */
+a img {
+    border:0;
+}
+
+

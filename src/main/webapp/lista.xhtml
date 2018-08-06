@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view locale="#{facesContext.externalContext.requestLocale}"> 
+
+        <h:head>
+        </h:head>
+        <h:body>
+
+            <ui:composition template="/plantillas/layout.xhtml">
+                <ui:define name="body">
+
+                    <p:dataTable var="cliente" value="#{clienteBean.listaClientes}" scrollable="true" scrollHeight="150">
+                        <p:column headerText="#{msjs.form_codigo}" >
+                            <h:outputText value="#{cliente.codigocliente}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_apellido}" >
+                            <h:outputText value="#{cliente.appaterno}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_apellidoMat}" >
+                            <h:outputText value="#{cliente.apmaterno}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_nombre}" >
+                            <h:outputText value="#{cliente.nombres}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_nacimiento}" >
+                            <h:outputText value="#{cliente.nacimiento}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_direccion}">
+                            <h:outputText value="#{cliente.direccion}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_referencia}">
+                            <h:outputText value="#{cliente.referencia}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_genero}">
+                            <h:outputText value="#{cliente.genero}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_estado}">
+                            <h:outputText value="#{cliente.estado}" />
+                        </p:column>
+                        <p:column headerText="#{msjs.form_modificar}">
+                            <h:form>
+                                <p:commandLink actionListener="#{clienteBean.modificar(cliente)}" ajax="false">
+                                    <h:graphicImage name="icons/edit.png" width="20px" height="20px" />
+                                </p:commandLink>
+                            </h:form>
+                        </p:column>
+                        <p:column headerText="#{msjs.form_eliminar}">
+                            <h:form>
+                                <h:commandLink action="#{clienteBean.eliminar()}">
+                                    <f:param name="codigo" value="#{cliente.codigocliente}" />
+                                    <h:graphicImage name="icons/delete.png" width="20px" height="20px" />
+                                </h:commandLink>
+                            </h:form>
+                        </p:column>
+                    </p:dataTable>
+
+
+
+                </ui:define>
+            </ui:composition>
+        </h:body>
+    </f:view>
+</html>

@@ -1,0 +1,44 @@
+.tabla{
+                border-collapse: collapse;
+                border: 1px solid #ffffff;
+                width: 600px;
+            }
+
+.tabla thead tr{
+    background-color: #003399;
+}
+.tabla thead th{
+    border: 1px solid #000000;
+    color: #ffffff;
+}
+
+.tabla tbody td{
+    border: 1px solid #0000cc;
+    padding: 3px;
+}
+
+.tabla tbody .impar{
+    color: #000000
+}
+
+.tabla tbody .par{
+    color: #6699ff;
+}
+
+.formulario{
+                border-collapse: collapse;
+                border: 0px;
+                
+               
+            }
+
+.formulario  .etiqueta{
+    border: 0px;
+    background-color:  #ffffdd;
+    padding: 2px;
+}
+
+.formulario  .campo{
+    border: 0px;
+    padding: 2px;
+}
