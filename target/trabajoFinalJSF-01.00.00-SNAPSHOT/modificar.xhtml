@@ -23,14 +23,14 @@ and open the template in the editor.
                             <f:facet name="header">
                                 #{msjs.titulo_cliente_nuevo}
                             </f:facet>
-                            
+
                             <p:inputText value="#{clienteBean.cliente.codigocliente}" 
                                          required="true"
                                          type="hidden" 
                                          id="codigo">
                                 <p:ajax update="msgNombre" event="blur" />
                             </p:inputText>
-                            
+
                             <p:outputLabel for="nombre" value="#{msjs.form_nombre}"/>
                             <p:inputText value="#{clienteBean.cliente.nombres}" 
                                          required="true"
@@ -73,13 +73,13 @@ and open the template in the editor.
                             <p:message for="genero"/>
 
                             <p:outputLabel for="fecNacimiento" value="#{msjs.form_nacimiento}"/>
-                            <p:calendar value="#{clienteBean.cliente.nacimiento}"
-                                        id="fecNacimiento"
-                                        required="true" 
-                                        effect="fadeIn" maxdate="today"
-                                        pattern="dd/mm/yyyy" readonlyInput="true">
-                            </p:calendar>
-                            <p:message for="fecNacimiento"/>     
+                            
+                            <p:calendar id="fecNacimiento" 
+                                        value="#{clienteBean.cliente.nacimiento}" 
+                                        mode="inline"
+                                        navigator="true" pattern="dd/MM/yyyy"
+                                        required="true"/>
+                            <p:message for="fecNacimiento"/>   
 
                             <p:outputLabel for="direccion" value="#{msjs.form_direccion}"/>
                             <p:inputText value="#{clienteBean.cliente.direccion}" 
@@ -108,14 +108,10 @@ and open the template in the editor.
                             <p:message for="estado"/>
 
                             <f:facet name="footer">
-                                <p:commandButton value="#{msjs.form_boton_registrar}"
-                                                 action="#{clienteBean.registrar}"
-                                                 update="@form"/>
-                                <p:commandButton value="Reset tag"
-                                                 update="panel"
-                                                 process="@this" >
-                                    <p:resetInput target="panel"/>    
-                                </p:commandButton>
+                                <p:commandButton value="#{msjs.form_boton_editar}" 
+                                                 action="#{clienteBean.modificar_url}" 
+                                                 onclick="if (!confirm('#{msjs.confirm_save}'))
+                                                             return false"/>
                             </f:facet>
 
                         </p:panelGrid>

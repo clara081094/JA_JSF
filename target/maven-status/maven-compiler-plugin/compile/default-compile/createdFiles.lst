@@ -1,4 +1,5 @@
 pe/edu/cibertec/bean/Cliente.class
+pe/edu/cibertec/managed/OptionsView.class
 pe/edu/cibertec/managed/ListadoBean.class
 pe/edu/cibertec/dao/impl/DaoClientesImpl.class
 pe/edu/cibertec/managed/LoginBean.class

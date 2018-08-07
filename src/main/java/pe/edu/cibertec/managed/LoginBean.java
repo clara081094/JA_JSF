@@ -5,6 +5,7 @@
 package pe.edu.cibertec.managed;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 import javax.faces.application.FacesMessage;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpSession;
 
 @ManagedBean(name="loginBean")
 @SessionScoped
-public class LoginBean {
+public class LoginBean implements Serializable{
     
     private String username;
     private String password;

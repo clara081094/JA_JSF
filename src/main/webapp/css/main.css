@@ -1,11 +1,13 @@
 body {
     background-color: gray;
+    font-size: 0.85em;
 }
 
 #contenedor {
+    border-bottom: solid;
     border-style:groove;
     background-color: white;
-    width: 900px;
+    width: 1200px;
     margin: 0em auto;
 }
 
@@ -14,6 +16,7 @@ body {
 }
 
 #menu {
+    font-size: 1.3em;
     float: left;
     width: 200px;
 }
@@ -24,7 +27,7 @@ body {
 }
 
 #pie {
-     border-top: solid;
+    border-top: solid;
     clear: both;
 }
 
