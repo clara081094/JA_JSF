@@ -28,6 +28,7 @@ and open the template in the editor.
                                          required="true"
                                          label="#{msjs.form_nombre}" 
                                          id="nombre">
+                                <f:validateLength maximum="40"/>
                                 <p:ajax update="msgNombre" event="blur" />
                             </p:inputText>
                             <p:message id="msgNombre" for="nombre"/>
@@ -71,14 +72,15 @@ and open the template in the editor.
                                         value="#{clienteBean.cliente.nacimiento}" 
                                         mode="inline"
                                         navigator="true" pattern="dd/MM/yyyy"
-                                        required="true"/>
+                                        required="true"
+                                        maxdate="today"/>
                             <p:message for="fecNacimiento"/> 
                             
                             <p:outputLabel for="direccion" value="#{msjs.form_direccion}"/>
                             <p:inputText value="#{clienteBean.cliente.direccion}" 
                                          required="true"
                                          id="direccion">
-                                <f:validateLength maximum="40"/>
+                                <f:validateLength maximum="100"/>
                                 <p:ajax update="msgDireccion" event="blur" />
                             </p:inputText> 
                             <p:message id="msgDireccion" for="direccion"/>
@@ -86,7 +88,7 @@ and open the template in the editor.
                             <p:outputLabel for="referencia" value="#{msjs.form_referencia}"/>
                             <p:inputText value="#{clienteBean.cliente.referencia}" 
                                          id="referencia">
-                                <f:validateLength maximum="40"/>
+                                <f:validateLength maximum="100"/>
                                 <p:ajax update="msgReferencia" event="blur" />
                             </p:inputText> 
                             <p:message id="msgReferencia" for="referencia"/>

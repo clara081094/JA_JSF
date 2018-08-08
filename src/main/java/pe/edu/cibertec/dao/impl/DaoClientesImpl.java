@@ -37,7 +37,7 @@ public class DaoClientesImpl implements DaoClientes {
                 + "nacimiento,"
                 + "direccion,"
                 + "referencia,"
-                + "IF(genero LIKE '1', 'Masculino', 'Femenino'),"
+                + "IF(genero LIKE 'M', 'Masculino', 'Femenino'),"
                 + "IF(estado LIKE '1', 'Si', 'No') "
                 + "FROM cliente "
                 + "ORDER BY appaterno, apmaterno, nombres";
@@ -161,8 +161,8 @@ public class DaoClientesImpl implements DaoClientes {
                 + "nacimiento,"
                 + "direccion,"
                 + "referencia,"
-                + "IF(genero LIKE '1', 'M', 'F'),"
-                + "IF(estado LIKE '1', 'Si', 'No') "
+                + "genero,"
+                + "estado "
                 + "FROM cliente "
                 + "WHERE codigocliente=?";
 

@@ -53,7 +53,9 @@ public class LoginBean implements Serializable{
         
         Calendar ca = Calendar.getInstance();
         Integer hora=ca.get(Calendar.HOUR_OF_DAY);
+        System.out.println("hora: "+hora);
         Integer minutos=ca.get(Calendar.MINUTE);
+        System.out.println("minutos: "+minutos);
         
         ResourceBundle rb=
                 ResourceBundle.getBundle("pe.edu.cibertec.recursos.mensajes",

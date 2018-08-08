@@ -7,10 +7,8 @@ package pe.edu.cibertec.managed;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import pe.edu.cibertec.bean.Cliente;
 import pe.edu.cibertec.dao.DaoClientes;
@@ -22,7 +20,7 @@ import pe.edu.cibertec.dao.impl.DaoClientesImpl;
  */
 
 @ManagedBean(name = "clienteBean")
-@SessionScoped
+@ApplicationScoped
 public class ClienteBean {
     
     private List<Cliente> listaClientes;
@@ -59,43 +57,37 @@ public class ClienteBean {
         String resultado;
         clienteDao = new DaoClientesImpl();
         resultado = clienteDao.clientesIns(cliente);
-        cliente=new Cliente();
         return this.listar();
     }
 
     public String listar() {
         clienteDao = new DaoClientesImpl();
-        listaClientes = new ArrayList<Cliente>();
         listaClientes = clienteDao.clientesQry();
         return "listado";
     }
     
-    public String nuevo_url() {
-        
-        cliente=new Cliente();
+    public String nuevo_url(){
+        cliente= new Cliente();
         return "nuevo";
     }
     
     public String modificar_url() {
         
-        System.out.println("Entra al moficicar url");
         clienteDao = new DaoClientesImpl();
         clienteDao.clientesUpd(cliente);
-        System.out.println("cliente: "+cliente.toString());
-        System.out.println("cliente: "+cliente.getReferencia());
         return this.listar();
     }
 
     public String modificar(Cliente clienti) {
         
+        clienteDao = new DaoClientesImpl();
         cliente=new Cliente();
-        cliente=clienti;
+        cliente=clienteDao.clientesGet(clienti.getCodigocliente().toString());
         return "modificar";
     }
 
     public String eliminar(String idcliente) {   
         
-        System.out.println("Esta en eliminar"+idcliente);
         clienteDao = new DaoClientesImpl();
         if(idcliente!=null)
         {clienteDao.clientesDel(idcliente);}

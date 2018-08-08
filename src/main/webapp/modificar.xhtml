@@ -27,7 +27,8 @@ and open the template in the editor.
                             <p:inputText value="#{clienteBean.cliente.codigocliente}" 
                                          required="true"
                                          type="hidden" 
-                                         id="codigo">
+                                         id="codigo"
+                                         disabled="true">
                                 <p:ajax update="msgNombre" event="blur" />
                             </p:inputText>
 
@@ -36,6 +37,7 @@ and open the template in the editor.
                                          required="true"
                                          label="#{msjs.form_nombre}" 
                                          id="nombre">
+                                <f:validateLength maximum="40"/>
                                 <p:ajax update="msgNombre" event="blur" />
                             </p:inputText>
                             <p:message id="msgNombre" for="nombre"/>
@@ -67,10 +69,12 @@ and open the template in the editor.
                             <p:selectOneRadio value="#{clienteBean.cliente.genero}"
                                               styleClass="selectOneRadioColumn"
                                               id="genero"
-                                              layout="pageDirection">
+                                              layout="pageDirection"
+                                              required="true">
                                 <f:selectItems value="#{listados.generos}"/>
+                                <p:ajax update="msgGenero" event="blur" />
                             </p:selectOneRadio>
-                            <p:message for="genero"/>
+                            <p:message id="msgGenero" for="genero"/>
 
                             <p:outputLabel for="fecNacimiento" value="#{msjs.form_nacimiento}"/>
                             
@@ -85,7 +89,7 @@ and open the template in the editor.
                             <p:inputText value="#{clienteBean.cliente.direccion}" 
                                          required="true"
                                          id="direccion">
-                                <f:validateLength maximum="40"/>
+                                <f:validateLength maximum="100"/>
                                 <p:ajax update="msgDireccion" event="blur" />
                             </p:inputText> 
                             <p:message id="msgDireccion" for="direccion"/>
@@ -93,7 +97,7 @@ and open the template in the editor.
                             <p:outputLabel for="referencia" value="#{msjs.form_referencia}"/>
                             <p:inputText value="#{clienteBean.cliente.referencia}" 
                                          id="referencia">
-                                <f:validateLength maximum="40"/>
+                                <f:validateLength maximum="100"/>
                                 <p:ajax update="msgReferencia" event="blur" />
                             </p:inputText> 
                             <p:message id="msgReferencia" for="referencia"/>
