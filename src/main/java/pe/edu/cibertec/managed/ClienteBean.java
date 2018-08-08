@@ -80,8 +80,9 @@ public class ClienteBean {
         
         System.out.println("Entra al moficicar url");
         clienteDao = new DaoClientesImpl();
-        System.out.println("cliente: "+cliente.getNombres());
         clienteDao.clientesUpd(cliente);
+        System.out.println("cliente: "+cliente.toString());
+        System.out.println("cliente: "+cliente.getReferencia());
         return this.listar();
     }
 
